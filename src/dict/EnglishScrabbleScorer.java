@@ -1,5 +1,5 @@
 package dict;
-public class EnglishScrabbleScorer implements StringScorer {
+public class EnglishScrabbleScorer {
 
 	public int getScore(String word) {
 		// Initialize variables, populate score array with letter values etc
@@ -61,21 +61,5 @@ public class EnglishScrabbleScorer implements StringScorer {
 							+ e.getMessage());
 		}
 		return total;
-	}
-
-	public static void main(String[] args) {
-		EnglishScrabbleScorer game = new EnglishScrabbleScorer();
-
-		String word = "Quetzalcoatl";
-		String word2 = "Haggling";
-		String word3 = "IndexOutOfBounds";
-		String word4 = "cuntflaps";
-
-		System.out.println(word + " = " + game.getScore(word) + " points.");
-		System.out.println(word2 + " = " + game.getScore(word2) + " points.");
-		System.out.println(word3 + " = " + game.getScore(word3) + " points.");
-		System.out.println(word4 + " = " + game.getScore(word4) + " points.");
-
-		System.exit(0);
 	}
 }

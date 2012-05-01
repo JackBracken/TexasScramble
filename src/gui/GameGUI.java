@@ -97,7 +97,6 @@ public class GameGUI {
 		gameFrame.setTitle("Texas Scramble");
 		gameFrame.setSize(1022, 768);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//gameFrame.setVisible(true);
 		gameFrame.setResizable(false);
 		gameFrame.setLocationRelativeTo(null);
 
@@ -233,7 +232,6 @@ public class GameGUI {
 		TileBag bag = new TileBag();
 
 		// HashBiBap to map char value to button icon
-		// HashBiMap is a data structure from the google guava library
 		final HashBiMap<Character, ImageIcon> charToIcon = HashBiMap.create();
 
 		charToIcon.put('a', a);
@@ -264,6 +262,7 @@ public class GameGUI {
 		charToIcon.put('z', z);
 
 		// main game loop
+		// TODO Finish this up. Game logic needs to be correctly implemented
 		do {
 			bag.shuffleTiles();
 			char[] pTiles = bag.dealPlayerTiles(4);
@@ -337,10 +336,8 @@ public class GameGUI {
 
 		foldButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//text.append("You fold\n");
+				text.append("You folded\n");
 				human.fold();
-				
-				text.append("Your word is: " + buildPlayerString.toString() + "\n");
 			}
 
 		});

@@ -6,5 +6,4 @@ public class HumanPlayer extends Player {
 		super(purseSize);
 		// TODO Auto-generated constructor stub
 	}
-
 }

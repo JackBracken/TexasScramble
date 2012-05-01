@@ -87,8 +87,4 @@ public abstract class Player {
 	public String takeTurn(){
 		return null;
 	}
-	
-//	void makeWord(String word) {
-
-//	}
 }

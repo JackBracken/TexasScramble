@@ -5,18 +5,12 @@ import java.util.Hashtable;
 import java.util.Scanner;
 import java.util.Vector;
 
-/*
- *  README: For programming week 5's assignment, instead of changing last weeks methods
- *  getAllWordsOfLength(), I created a new one called getAllGoodWordsOfLen() for use with
- *  my getBestWordIn() method/
- */
 public class DictionaryTable {
 
 	// Initialize variables
 	private Hashtable<String, Integer> dictionaryHashTable = new Hashtable<String, Integer>();
 	private EnglishScrabbleScorer wordScorer = new EnglishScrabbleScorer();
 
-	// Constructor method which takes filename as input
 	@SuppressWarnings("boxing")
 	public DictionaryTable() {
 
@@ -70,8 +64,6 @@ public class DictionaryTable {
 		return result;
 	}
 
-	// modified methods from last week's assignment
-	
 	// wrapper method
 	public Vector<String> getAllWordsOfLength(int len, int minVal, String in) {
 		StringBuffer letters = new StringBuffer();
@@ -82,11 +74,8 @@ public class DictionaryTable {
 		
 		StringBuffer word = new StringBuffer();
 		Vector<String> results = new Vector<String>();
-		
-		
 		getAllWordsOfLength(len, minVal, letters, word, results);
 		return results;
-
 	}
 
 	@SuppressWarnings("boxing")
@@ -110,13 +99,7 @@ public class DictionaryTable {
 				results.add(checkWord);
 				minVal = wordScorer.getScore(checkWord);
 			}
-
 		}
 		return results;
-	}
-
-	public static void main(String args[]) {
-		DictionaryTable testDict = new DictionaryTable();
-		System.out.println(testDict.getBestWordIn(4, "dhsgbak"));
 	}
 }
